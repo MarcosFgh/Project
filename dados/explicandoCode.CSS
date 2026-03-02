@@ -1,0 +1,216 @@
+/* Expicando Code's 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+Usado pra zerar referencias do navegador
+
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --bg-switch: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --bg-switch: url(./assets/sun.svg);
+}
+
+Usados pra alternar entre modelos e visuais
+
+
+body {
+  
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  *background: color image repeat position/ size *
+
+  background: var(--bg-url) no-repeat top center/cover;
+} 
+
+Usado para configurar o body (corpo do site), linha 43 sendo uma abreviação de todo codigo "37 - 41"
+
+
+body * {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+Usado juntamente com o link da fonte usado no HEAD do HTML, codigo completo por questao de segurança, sendo necessario apenas a linha 51 dentro do (body *), as outras informações serão puxadas atraves do link no HTML.
+
+#container {
+  width: 360px;
+  margin: 40px auto 0px;
+  padding: 0 24px;
+  /* ou "margin-left" e/ou "margin-rigth"*
+}
+  
+Container --> variavel puxada do HTML, que vai incluir as informaçoes visuais do site.
+
+#profile {
+  text-align: center;
+  padding: 24px;
+  /* depois de uma surra, aprendi que textos tambem sao automaticamentes in-line e nao estavam dentro de profile img
+}
+
+Profile --> Variavel dentro de container usada pra configurar o perfil
+
+#profile img {
+  display: block;
+  width: 112px;
+  margin: auto;
+  /* imagem é automaticamente in-line, por isso "margin: auto" não funciona, obrigatoria a conversão para "display: block" para centralização da imagem
+}
+
+Profile img --> Usada pra inserir uma imagem dentro do espaço Profile, nesse caso o perfil no site
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+Profile p --> Usado pra configurar uma mensagem de texto dentro do espaço Profile
+
+#switch {
+  /*forma de centralizar display block
+  margin: 4px auto;
+  position: relative;
+  width: 64px;
+}
+
+Switch, variavel puxada do HTML, usada nesse caso pra alternar entre o mode ligth e dark, linhas (95 - 97) exemplificado uma das maneiras de centralizar uma variavel que é DISPLAY: BLOCK
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  /*forma de alinhar bg
+  background: white var(--bg-switch) no-repeat center;
+  position: absolute;
+  z-index: 1;
+
+  /*forma de alinhar variavel em absoluto
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+Switch button --> Variavel "button" que esta dentro do espaço "swtich" no HTML, usada nesse caso pra fazer um botao que alterna entre os modos ligth e dark; Exemplificado na linha (108) uma das maneiras de alinhar ao centro o Background e exemplificado nas linhas (113 - 115) uma das maneiras de alinhar uma variavel em absoluto, absoluto que por sua vez é uma variavel que pode percorrer dentro de todo o espaço designado, nesse exemplo, Switch button percorre todo o espaço de Switch
+
+.light #switch button{
+ right: 0;
+  left: initial;
+}
+
+.light #switch button --> Forma de designar o espaço que deve ocupar o button enquanto o sistema rodar o mode light 
+
+#switch span {
+  /* Span é automaticamente display in-line
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+#switch span --> Sendo usado nesse exemplo como uma espécie de "corrimão" onde o button irar percorrer durante a troca de mode's
+
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+Ul --> Estilo de linhas desorganizadas, puxada tambem do HTML, usada nesse exemplo pra guardar as informaçoes do usuario
+
+ul li a {
+  /* forma de alinhar diplay flex
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2;
+}
+
+Ul li a (Ul -- conjunto de linhas, li -- linhas, a -- link de cada respectiva linha, var que guarda o HRef), uma das maneiras de alinhar uma variavel cujo o display seja designado como DISPLAY: FLEX descrita nas linhas (155 - 157), no mais sendo personalização
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+ul li a:hover --> como sua indicação "HOVER" é usada pra designar comandos quando a seta do mouse passar em cima de uma das caixas, por exemplo
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social - links --> puxada do HTML serviu nesse exemplo para armazenar os modelos de icones, atraves do link do iconics e suas variaveis
+
+#social-links a {
+  /* forma de alinhar diplay flex
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2;
+}
+
+social-links a --> Assim como no esquema de linhas, a var "a" na linha serve pra armazenar links, utilizada nesse exemplo pra linkar os icones. Mais uma vez citado como alinhar uma variavel em DISPLAY: FLEX.
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+social-links a:hover --> novamente com nas linhas, quando inserida a tag HOVER significa que o bloco é responsavel por agir quando o usuario passar o mouse em cima.
+
+#rodape {
+  padding: 24px 0;
+  /*forma de alinhar texto
+  text-align: center;
+  font-size: 14px;
+}
+ 
+#rodape --> Texto simples deixado no bottom do site, nesse caso tras consigo nas linhas (212 - 213) uma das maneiras de alinhar textos.
